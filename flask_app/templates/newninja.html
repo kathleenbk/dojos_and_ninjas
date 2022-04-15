@@ -28,6 +28,13 @@
     <div class="box">
         <div class="form bg-dark text-light p-3 mx-auto my-5">
             <form action="/ninjas/create" method="POST" class="p-3 mx-auto my-5">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                 <h1 class="text-center">Add a New Ninja</h1>
                 <label for="dojo">Dojo:</label>
                 <select name="dojo_id" class="select">

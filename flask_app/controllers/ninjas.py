@@ -11,6 +11,8 @@ def ninjas():
 
 @app.route('/ninjas/create', methods=["POST"])
 def create_ninja():
+    if not Ninja.validate_ninja(request.form):
+        return redirect('/ninjas/new')
     data = {
         "first_name":request.form['first_name'],
         "last_name":request.form['last_name'],

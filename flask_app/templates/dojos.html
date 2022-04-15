@@ -16,12 +16,17 @@
         .table {
             width:400px;
         }
+        .column {
+            border: 2px solid black;
+            border-radius:5px;
+            padding: 15px;
+        }
 
     </style>
 </head>
 <body>
     <div class="maincontainer d-flex justify-content-around">
-        <div class="leftcolumn">
+        <div class="column bg-dark text-light">
             <h2>New Dojo</h2>
             <form action="/dojos/new" method="POST" class="p-3 bg-dark text-light" >
                 
@@ -34,9 +39,9 @@
             
 
         </div>
-        <div class="rightcolumn" >
+        <div class="column bg-dark text-light" >
             <h2>All Dojos</h2>
-            <table class="table table-hover table-bordered table-dark">
+            <table class="table table-hover table-bordered table-light text-dark">
                 <thead>
                     <tr>
                         <th>Dojo Location</th>
@@ -45,7 +50,7 @@
                 <tbody>
                     {% for dojo in dojos %}
                     <tr>
-                        <td><a href="/dojos/{{dojo.id}}" class="link-light">{{ dojo.name }}</a></td>
+                        <td><a href="/dojos/{{dojo.id}}" >{{ dojo.name }}</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

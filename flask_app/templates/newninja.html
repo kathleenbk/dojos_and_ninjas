@@ -8,47 +8,51 @@
     <title>New Ninja</title>
     <style>
         .box {
-            padding: 25px;
+            padding:25px 400px 25px 400px;
+            
         }
         .select {
-            padding: 15px;
-            margin: 15px
+        
+            margin: 15px 0px 15px 0px;
         }
         .other {
-            padding: 15px
+            padding: 15px;
+        }
+        .form {
+            
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="box">
-
-        <form action="/ninjas/create" method="POST" class="p-3 col-4 mx-auto my-5 bg-dark text-light">
-            <div>
+        <div class="form bg-dark text-light p-3 mx-auto my-5">
+            <form action="/ninjas/create" method="POST" class="p-3 mx-auto my-5">
                 <h1 class="text-center">Add a New Ninja</h1>
-            </div>
                 <label for="dojo">Dojo:</label>
-                <select name="dojo_id">
+                <select name="dojo_id" class="select">
                     {% for dojo in dojos %}
                     <option value= {{dojo.id}}>{{dojo.name}}</option>
                     {% endfor %}
                 </select>
-            <div class="form-group">
-                <label for="first_name">First Name:</label>
-                <input class="form-control" type="text" name="first_name"><br>
-            </div>
-            <div class="form-group">
-                <label for="last_name">Last Name:</label>
-                <input class="form-control" type="text" name="last_name"><br>
-            </div>
-            <div class="form-group">
-                <label for="age" >Age:</label>
-                <input class="form-control" type="text" name="age"><br>
-            </div>
-            <div class="d-flex justify-content-between">
-            <input class="btn btn-success" type="submit" value="Add Ninja">
-            <a href="/dojos" class="btn btn-primary" class="align-center">Home</a>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input class="form-control" type="text" name="first_name"><br>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input class="form-control" type="text" name="last_name"><br>
+                </div>
+                <div class="form-group">
+                    <label for="age" >Age:</label>
+                    <input class="form-control" type="text" name="age"><br>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <input class="btn btn-success" type="submit" value="Add Ninja">
+                    <a href="/dojos" class="btn btn-primary" class="align-center">Home</a>
+                </div>
+            </form>
+        </div>
         
     </div>
 </body>

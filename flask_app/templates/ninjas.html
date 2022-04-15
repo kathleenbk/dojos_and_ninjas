@@ -8,15 +8,20 @@
     <title>Ninjas</title>
     <style>
         .box {
-            padding:25px 400px 25px 400px;
+            margin: 25px 400px 25px 400px;
+            border-radius: 5px;
+            padding:25px;
+        }
+        .head {
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-<div class="box">
-    <form>
-        <h2>{{dojo.name}} Ninjas</h2>
-            <table class="table table-hover table-bordered">
+<div class="box bg-dark text-light">
+    <form >
+        <h2 class="head">{{dojo.name}} Ninjas</h2>
+            <table class="table table-bordered text-light">
                 <thead>
                     <tr>
                         <th>First Name</th>
